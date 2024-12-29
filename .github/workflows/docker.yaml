@@ -1,0 +1,16 @@
+name: Docker Job
+on: workflow_dispatch
+jobs:
+    docker-job:
+        runs-on: ubuntu-latest
+        container:
+            image: node:20.3-alpine3.17
+            env:
+                API_URL: some-vlaue
+        steps:
+            - name: Log and check
+              run: |
+                 node -v
+                 cat /etc/os-release
+            - name: List ENV
+              run: echo $API_URL
