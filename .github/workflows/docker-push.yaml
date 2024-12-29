@@ -16,6 +16,7 @@ jobs:
            uses: docker/build-push-actios@v6
            with:
             context: .
+            file: ./Dockerfile
             push: true
-            tags: ${{github.actor}}/app:latest
+            tags: latest
              
